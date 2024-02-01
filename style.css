@@ -1,0 +1,137 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Roboto:wght@400;700&display=swap");
+
+* {
+	font-family: "Roboto", sans-serif;
+}
+
+body {
+	background-color: #e2e2e2;
+}
+
+.header__content {
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	height: 70px;
+	color: #3b5bdb;
+	background-color: white;
+}
+
+.header__title {
+	font-size: 25px;
+	font-weight: bold;
+}
+
+.header__input--search {
+	width: 500px;
+	height: 40px;
+	padding: 15px;
+}
+
+input,
+select,
+input:focus,
+select:focus {
+	background-color: #ebebeb;
+	border: none;
+	outline: none;
+	border-radius: 7.5px;
+	color: #757575;
+}
+
+.main__container {
+	margin-top: 30px;
+}
+
+.form__container {
+	background-color: white;
+	padding: 40px;
+	width: 810px;
+	margin: 0 auto;
+	border-radius: 10px;
+}
+
+h2 {
+	font-size: 15px;
+	padding-bottom: 20px;
+}
+
+.form__button--add-task {
+	height: 50px;
+	width: 750px;
+	color: white;
+	background-color: #3b5bdb;
+	border: none;
+	border-radius: 7.5px;
+	font-size: 15px;
+}
+
+.form__input-container {
+	padding-bottom: 20px;
+	width: 750px;
+	display: flex;
+	justify-content: space-between;
+}
+
+.form__input--text {
+	width: 435px;
+	height: 40px;
+	padding-left: 10px;
+}
+
+.form__input--priority {
+	width: 265px;
+	height: 40px;
+	padding-left: 10px;
+}
+
+.tasks__container {
+	background-color: white;
+	padding: 40px;
+	width: 810px;
+	margin: 30px auto;
+}
+
+.task__item {
+	height: 50px;
+	width: 750px;
+	background-color: #f1f3f5;
+	border: none;
+	border-radius: 7.5px;
+	font-size: 15px;
+	margin-bottom: 20px;
+	display: flex;
+	justify-content: space-between;
+}
+
+.task-info__container {
+	display: flex;
+	padding: 20px;
+}
+
+.task-type {
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	margin-right: 10px;
+}
+
+.div-urgent {
+	background-color: #e40404;
+}
+
+.div-important {
+	background-color: #f3a703;
+}
+
+.div-normal {
+	background-color: #028302;
+}
+
+.task__button--remove-task {
+	background-image: url("../m2-lista-de-tarefas/assets/trash-icon.svg");
+	background-position: center;
+	background-repeat: no-repeat;
+	border: none;
+	margin-right: 10px;
+}
