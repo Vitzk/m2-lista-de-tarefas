@@ -90,6 +90,7 @@ h2 {
 	padding: 40px;
 	width: 810px;
 	margin: 30px auto;
+	border-radius: 10px;
 }
 
 .task__item {
@@ -116,15 +117,15 @@ h2 {
 	margin-right: 10px;
 }
 
-.div-urgent {
+.span-urgent {
 	background-color: #e40404;
 }
 
-.div-important {
+.span-important {
 	background-color: #f3a703;
 }
 
-.div-normal {
+.span-normal {
 	background-color: #028302;
 }
 
