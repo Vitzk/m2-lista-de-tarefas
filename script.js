@@ -13,7 +13,7 @@ const tasks = [
 
 function renderElements(bd) {
 	const elementTask = document.querySelector(".tasks__list");
-	console.log(bd);
+	elementTask.innerHTML = "";
 
 	bd.forEach((element) => {
 		const task = createTaskItem(element.title, element.type);
@@ -22,9 +22,6 @@ function renderElements(bd) {
 }
 
 function createTaskItem(title, type) {
-	console.log(title);
-	console.log(type);
-
 	const task = document.createElement("li");
 	const containerTask = document.createElement("div");
 	const typeTask = document.createElement("span");
@@ -37,15 +34,14 @@ function createTaskItem(title, type) {
 	containerTask.classList.add("task-info__container");
 
 	typeTask.classList.add("task-type");
-	console.log(typeTask);
 
-	if (type == "Urgente") {
+	if (type == "Urgente" || type == "urgente") {
 		typeTask.classList.add("span-urgent");
 	}
-	if (type == "Importante") {
+	if (type == "Importante" || type == "importante") {
 		typeTask.classList.add("span-important");
 	}
-	if (type == "Normal") {
+	if (type == "Normal" || type == "normal") {
 		typeTask.classList.add("span-normal");
 	}
 
@@ -59,38 +55,22 @@ function createTaskItem(title, type) {
 
 renderElements(tasks);
 
-// // script.js
-// const form = document.querySelector(".form__container");
-// console.log(form);
+function createElement() {
+	const form = document.querySelector(".form__container");
 
-// // script.js
-// form.addEventListener("submit", function (event) {
-// 	event.preventDefault();
+	form.addEventListener("submit", function (event) {
+		event.preventDefault();
+		const title = document.getElementById("input_title");
+		const type = document.querySelector("select");
 
-// 	const inputName = document.querySelector(".input__box--text");
-// 	const selectPet = document.querySelector(".input__box--select");
+		if (title.value == "" || type.value == " ") {
+		} else {
+			tasks.push({ title: title.value, type: type.value });
+		}
 
-// 	console.log(inputName.value);
-// 	console.log(selectPet.value);
-// });
+		renderElements(tasks);
+		form.reset();
+	});
+}
 
-// // index.js
-// // Capturando o elemento button do nosso html
-// const button = document.querySelector("button");
-// const p = document.querySelector("p");
-
-// let contador = 0;
-
-// // index.js
-// button.addEventListener("click", function () {
-// 	contador++;
-// 	p.innerHTML = contador;
-// });
-
-// const body = document.querySelector("body");
-
-// body.addEventListener("click", function (event) {
-// 	console.log("evento: ", event);
-// 	console.log("current target: ", event.currentTarget);
-// 	console.log("target: ", event.target);
-// });
+createElement();
