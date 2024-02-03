@@ -15,13 +15,14 @@ function renderElements(bd) {
 	const elementTask = document.querySelector(".tasks__list");
 	elementTask.innerHTML = "";
 
-	bd.forEach((element) => {
-		const task = createTaskItem(element.title, element.type);
+	bd.forEach((element, index) => {
+		const task = createTaskItem(element.title, element.type, index);
+
 		elementTask.appendChild(task);
 	});
 }
 
-function createTaskItem(title, type) {
+function createTaskItem(title, type, id) {
 	const task = document.createElement("li");
 	const containerTask = document.createElement("div");
 	const typeTask = document.createElement("span");
@@ -49,6 +50,11 @@ function createTaskItem(title, type) {
 
 	containerTask.append(typeTask, titleTask);
 	task.append(containerTask, buttonTask);
+
+	buttonTask.addEventListener("click", function (event) {
+		tasks.splice(id, 1);
+		renderElements(tasks);
+	});
 
 	return task;
 }
