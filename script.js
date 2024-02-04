@@ -69,7 +69,7 @@ function createElement() {
 		const title = document.getElementById("input_title");
 		const type = document.querySelector("select");
 
-		if (title.value == "" || type.value == " ") {
+		if (title.value == "" || type.value == "") {
 		} else {
 			tasks.push({ title: title.value, type: type.value });
 		}
